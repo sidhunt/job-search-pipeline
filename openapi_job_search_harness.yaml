@@ -1,0 +1,161 @@
+openapi: 3.0.3
+info:
+  title: DISSID AI Job Search Code Harness & Automation API
+  version: 1.0.0
+  description: >
+    Comprehensive OpenAPI specification for the 24/7 DISSID AI Job Search Dashboard,
+    PRISM Kernel, Gmail ATS Synchronizer, and autonomous Llama.cpp edge staging harness
+    hosted on the Steam Deck node and forwarded via localhost:8765.
+servers:
+  - url: http://127.0.0.1:8765
+    description: Primary local dashboard server
+
+paths:
+  /:
+    get:
+      summary: Get Application Dashboard HTML
+      description: Returns the full, self-contained interactive web UI dashboard.
+      responses:
+        '200':
+          description: HTML dashboard rendered successfully
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /api/state:
+    get:
+      summary: Get Live Dashboard State
+      description: Returns current real-time counts, bucket distributions, and pipeline metrics.
+      responses:
+        '200':
+          description: Live state object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DashboardState'
+
+  /api/telemetry:
+    get:
+      summary: Get Recent Telemetry Events
+      description: Returns buffered telemetry events from action invocations.
+      responses:
+        '200':
+          description: Array of telemetry events
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  events:
+                    type: array
+                    items:
+                      type: object
+
+  /api/action:
+    post:
+      summary: Execute Dashboard Action
+      description: Dispatches deterministic workflow actions including dual-inbox Gmail sync, pipeline execution, and batch applications.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActionRequest'
+      responses:
+        '200':
+          description: Action executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+        '400':
+          description: Bad request or unsupported action
+        '500':
+          description: Internal execution failure
+
+components:
+  schemas:
+    DashboardState:
+      type: object
+      required:
+        - ok
+        - sent_count
+        - drafted_count
+        - total_rows
+        - bucket_counts
+      properties:
+        ok:
+          type: boolean
+        generated_date:
+          type: string
+        state_root:
+          type: string
+        repo_root:
+          type: string
+        sent_count:
+          type: integer
+        drafted_count:
+          type: integer
+        total_rows:
+          type: integer
+        bucket_counts:
+          type: object
+          properties:
+            Drafted:
+              type: integer
+            Submitted:
+              type: integer
+            Interview:
+              type: integer
+            Offer:
+              type: integer
+            Hired:
+              type: integer
+            Rejected/Closed:
+              type: integer
+
+    ActionRequest:
+      type: object
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          enum:
+            - gmail_sync
+            - run_pipeline
+            - batch_apply_all
+            - approve_packet
+            - clear_submission
+            - telemetry
+        limit:
+          type: integer
+          description: Maximum applications to process for pipeline operations
+        company:
+          type: string
+        role:
+          type: string
+        job_key:
+          type: string
+        url:
+          type: string
+
+    ActionResponse:
+      type: object
+      required:
+        - ok
+        - action
+      properties:
+        ok:
+          type: boolean
+        action:
+          type: string
+        output:
+          type: string
+        summary:
+          type: object
+        message:
+          type: string

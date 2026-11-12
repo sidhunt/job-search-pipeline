@@ -1,0 +1,16 @@
+{
+  "fullName": "Jane Doe",
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "phone": "+1-555-555-0123",
+  "city": "Toronto",
+  "state": "Ontario",
+  "country": "Canada",
+  "postalCode": "M5V 2T6",
+  "linkedinUrl": "https://www.linkedin.com/in/janedoe",
+  "githubUrl": "https://github.com/example",
+  "experienceYears": 5,
+  "requiresSponsorship": false,
+  "authorizedInCountry": true
+}

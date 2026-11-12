@@ -1,0 +1,32 @@
+{
+  "name": "autonomous-job-search-pipeline",
+  "version": "1.0.0",
+  "description": "Deterministic, privacy-safe autonomous job search, ranking, and webform application harness",
+  "type": "module",
+  "scripts": {
+    "start:dashboard": "python3 src/job_dashboard_server.py",
+    "pipeline:run": "python3 src/job_apply_runner.py",
+    "pipeline:stage": "python3 src/job_search_staging.py",
+    "apply:webforms": "bun automation/webform_interactive_runner.ts",
+    "apply:linkedin": "bun automation/linkedin_easy_apply_runner.ts",
+    "test:python": "pytest tests/",
+    "test:ts": "bun test tests/"
+  },
+  "keywords": [
+    "job-search",
+    "automation",
+    "playwright",
+    "career-ops",
+    "llm-agents",
+    "resume-tailoring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.49.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}

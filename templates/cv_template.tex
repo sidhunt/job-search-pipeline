@@ -1,0 +1,141 @@
+%% Example CV - Siddhant Badola
+%% Comprehensive overview of all competencies, experience, and achievements.
+%% Use as a master reference when tailoring role-specific CVs.
+%%
+%% SETUP: Populated via /setup with verified SSOT information.
+%% Compile with: lualatex main_example.tex
+%% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Force the name and section headings to render in moderncv blue (color1).
+\renewcommand*{\namefont}{\fontsize{34}{36}\bfseries\upshape}
+\colorlet{firstnamecolor}{color1}
+\colorlet{lastnamecolor}{color1}
+\colorlet{namecolor}{color1}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
+
+\usepackage[utf8]{inputenc}
+% pdflatex fallback only (the documented engine is lualatex, which skips this
+% branch).
+\ifpdftex\usepackage[T1]{fontenc}\fi
+\AtEndPreamble{\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Siddhant Badola - CV},
+    pdfpagemode=UseNone,
+}}
+\usepackage[scale=0.80]{geometry}
+\usepackage{import}
+
+% personal data
+\name{Jane}{Doe}
+\address{Toronto, ON, Canada}{}{}
+\phone[mobile]{+1 (555) 555-0123}
+\email{jane.doe@example.com}
+\extrainfo{\href{https://linkedin.com/in/janedoe}{LinkedIn}, \href{https://github.com/example}{GitHub}}
+
+\begin{document}
+
+\makecvtitle
+
+% ============================================================
+%     PROFILE STATEMENT
+% ============================================================
+
+\vspace{6pt}
+\small{Senior AI Systems and Full-Stack Software Engineer with 6+ years of production engineering experience building multi-tenant enterprise SaaS platforms, autonomous agentic coding and orchestration systems, and self-hosted local LLM infrastructure. Previously Software Developer at SLAM Technologies Ltd. / Roth IAMS Ltd. (2022 - 2026) and Founder of DISSID LABS INC. (2025 - Present). Canadian Permanent Resident with full unrestricted work authorization.}
+
+% ============================================================
+%     CORE COMPETENCIES
+% ============================================================
+
+\section{Core Competencies}
+\vspace{1pt}
+\begin{itemize}
+
+\item \textbf{Languages \& Runtimes}: TypeScript, Python, SQL (PostgreSQL, BigQuery, SQLite), Bash/Zsh, JavaScript (Node.js, Bun), HTML5/CSS3.
+
+\item \textbf{AI, LLM \& Agentic Infrastructure}: Multi-agent orchestration, Model Context Protocol (MCP) server engineering, local LLM inference (\texttt{llama.cpp}, Qwen, GGUF quantization), RAG \& hybrid lexical-vector pipelines, deterministic verification harnesses, prompt engineering \& structured JSON outputs.
+
+\item \textbf{Full-Stack \& Backend Engineering}: React, Next.js, Node.js, REST \& GraphQL APIs, multi-tenant SaaS data modeling, high-volume capital-planning and asset-management workflows.
+
+\item \textbf{Cloud, DevOps \& Sovereign Edge Systems}: Linux (Arch/SteamOS, Ubuntu/Debian), Docker, systemd service orchestration, GitHub Actions CI/CD, Google Cloud Platform (GCP), Firebase, Tailscale mesh networking.
+
+\item \textbf{Quality \& Verification Engineering}: Contract-first API testing, TDD/Red-Green-Refactor, automated browser QA (Playwright / Chrome DevTools MCP), security guardrails and prompt-injection defense.
+
+\end{itemize}
+
+% ============================================================
+%     PROFESSIONAL EXPERIENCE
+% ============================================================
+
+\section{Professional Experience}
+\vspace{3pt}
+\begin{itemize}
+
+% --- Most Recent Role ---
+\item{\cventry{2025-Present}{Founder \& Principal AI Systems Engineer}{DISSID LABS INC.}{Waterloo, ON, Canada}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Architected and operated a 24/7 sovereign multi-agent software engineering topology linking a macOS God-Node orchestrator with an on-prem Linux edge appliance running quantized \texttt{llama.cpp} inference and autonomous task queues.}
+    \item {Built Model Context Protocol (MCP) work-state coordination servers, deterministic verification harnesses, and automated regression testing pipelines across polyglot TypeScript and Python codebases.}
+    \item {Engineered local-first document compilation, RAG indexing, and structured evaluation pipelines with zero-cost local inference and strict anti-fabrication guardrails.}
+\end{itemize}}}
+
+\vspace{3pt}
+
+% --- Previous Role ---
+\item{\cventry{2022-2026}{Software Developer}{SLAM Technologies Ltd. / Roth IAMS Ltd.}{Waterloo, ON, Canada}{}{\vspace{1pt}
+\begin{itemize}
+    \item {Engineered core full-stack features for enterprise Integrated Asset Management Software (IAMS) used by municipalities, universities, school boards, and healthcare organizations across North America to manage billions of dollars in facility assets.}
+    \item {Built and optimized complex capital-planning, facility condition assessment (FCA), and reporting workflows across relational databases and modern web frontends.}
+    \item {Collaborated across product, data, and engineering teams through the SLAM Technologies to Roth IAMS growth transition to deliver reliable multi-tenant releases and resolve high-priority production bottlenecks.}
+\end{itemize}}}
+
+\end{itemize}
+
+% ============================================================
+%     EDUCATION
+% ============================================================
+
+\section{Education}
+\vspace{1pt}
+\begin{itemize}
+
+\item{\cventry{2021-2023}{Master of Science in Computer Science}{Lakehead University}{Thunder Bay, ON, Canada}{}{\vspace{1pt}
+Graduate coursework and research in Artificial Intelligence, Machine Learning, Distributed Systems, Advanced Algorithms, and Computer Vision.
+}}
+
+\vspace{3pt}
+
+\item{\cventry{2016-2020}{Bachelor of Technology in Computer Science \& Engineering}{DIT University}{Dehradun, India}{}{\vspace{1pt}
+Core curriculum in Data Structures, Operating Systems, Software Engineering, Computer Networks, and Relational Database Management Systems.
+}}
+
+\end{itemize}
+
+% ============================================================
+%     LANGUAGES
+% ============================================================
+
+\section{Languages}
+\vspace{1pt}
+\begin{itemize}
+\item {English (native / bilingual proficiency), Hindi (native).}
+\end{itemize}
+
+% ============================================================
+%     REFERENCES
+% ============================================================
+
+\section{References}
+\vspace{1pt}
+\begin{itemize}
+\item{Available upon request.}
+\end{itemize}
+
+\end{document}

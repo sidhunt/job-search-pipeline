@@ -1,0 +1,62 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+
+# Node / TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Browser Automation & Profiles
+.profiles/
+playwright-report/
+test-results/
+
+# Databases, state, and runtime output
+*.db
+*.sqlite
+*.sqlite3
+job_applications.db
+job_search_tracker.csv
+seen_jobs.json
+llamacpp_loop_status.json
+output/
+documents/applications/staged/*
+!documents/applications/staged/.gitkeep
+
+# Sensitive personal configurations & credentials
+.env
+.env.local
+.env.*.local
+config/candidate_profile.json
+!config/candidate_profile.example.json
+payload.json
+scripts/payload.json
+!scripts/payload.example.json
+
+# Generated PDFs & LaTeX temp files
+*.aux
+*.log
+*.out
+*.pdf
+!templates/*.pdf
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

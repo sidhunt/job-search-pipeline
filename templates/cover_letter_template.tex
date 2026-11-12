@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cover Letter - [Company], [Role]
+%
+% Example cover letter for Siddhant Badola. This is the structural
+% reference for /apply (see 06-cover-letter-templates.md) and the CI smoke
+% test for cover.cls: it must always compile with xelatex to exactly 1 page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{cover}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rfoot{Page \thepage \hspace{0pt}}
+\thispagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TITLE NAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{}{\Huge{Jane Doe}}{  \href{mailto:jane.doe@example.com}{jane.doe@example.com} | +1 (555) 555-0123 |  \urlstyle{same}\href{https://www.linkedin.com/in/janedoe}{LinkedIn}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     MAIN COVER LETTER CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\currentdate{\today}
+\lettercontent{Dear Hiring Team,}
+
+\lettercontent{I am writing to apply for the Senior AI Systems \& Full-Stack Engineer position. With over three and a half years building enterprise multi-tenant SaaS platforms at SLAM Technologies Ltd. / Roth IAMS Ltd. (2022 - 2026) and my current work architecting autonomous multi-agent and local LLM infrastructure at DISSID LABS INC. (2025 - Present), I bring production-hardened engineering discipline across TypeScript, Python, and distributed AI systems.}
+
+\lettercontent{Across my recent engineering roles, I have delivered reliability and velocity on complex production systems:}
+
+{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont
+\begin{itemize}
+    \item \textbf{Enterprise SaaS at Scale:} Engineered capital-planning, facility condition assessment, and reporting workflows at SLAM Technologies Ltd. / Roth IAMS Ltd. supporting institutional asset portfolios across North America.
+    \item \textbf{Autonomous Agent \& LLM Infrastructure:} Designed and operated a 24/7 multi-agent engineering topology at DISSID LABS INC. combining Model Context Protocol (MCP) coordination, quantized \texttt{llama.cpp} inference, and deterministic verification gates.
+    \item \textbf{End-to-End Ownership:} Built contract-tested APIs, relational data pipelines, and automated regression suites that prevent defects before they reach production.
+\end{itemize}\par}
+\vspace{6pt}
+
+\lettercontent{Your engineering team's focus on shipping reliable, high-leverage AI and full-stack software aligns directly with the systems I build every day. I value fast feedback loops, measurable verification, and pragmatic architecture over unnecessary complexity.}
+
+\lettercontent{As a Canadian Permanent Resident based in Waterloo, Ontario, I hold full unrestricted work authorization in Canada and am available immediately for remote or Waterloo/Toronto-area hybrid collaboration.}
+
+\lettercontent{I look forward to hearing from you.}
+
+\begin{flushright}
+\closing{Kind regards,}
+
+\signature{Siddhant Badola}
+\end{flushright}
+\end{document}
